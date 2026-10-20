@@ -27,19 +27,19 @@ export function Layout520() {
               <BackgroundCard
                 key={s.id}
                 id={s.id}
-                className="relative flex min-h-[20rem] scroll-mt-28 flex-col justify-end p-6 md:min-h-[22rem] md:p-8"
+                className="relative flex min-h-[20rem] scroll-mt-28 flex-col p-6 md:min-h-[22rem] md:p-8"
               >
                 <div className="absolute inset-0 z-0">
                   <Visual photo={s.photo} kind={s.visual} sizes="(min-width: 992px) 33vw, (min-width: 768px) 50vw, 100vw" className="size-full rounded-none" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-blumine-darkest via-blumine-darkest/85 to-blumine-darkest/30" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-blumine-darkest/85 via-blumine-darkest/70 to-blumine-darkest/95" />
                 </div>
-                <div className="relative z-10">
+                <div className="relative z-10 flex flex-1 flex-col">
                   <div className="mb-5 md:mb-6">
                     <Icon name={s.icon} className="size-12 text-white" />
                   </div>
                   <h3 className="mb-3 text-h5 font-bold text-white md:mb-4">{s.title}</h3>
                   <p className="text-white/85">{s.short}</p>
-                  <div className="mt-5 flex items-center md:mt-6">
+                  <div className="mt-auto flex items-center pt-5 md:pt-6">
                     <Button asChild variant="link-alt" size="link" iconRight={<ChevronRight className="text-white" />}>
                       <a href={href(hasPage ? s.to : "/contact/")}>{hasPage ? "Learn more" : "Ask about this service"}</a>
                     </Button>

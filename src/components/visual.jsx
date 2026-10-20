@@ -1,6 +1,6 @@
 import React, { useId } from "react";
 import { cn } from "@/lib/utils";
-import { photos, photoSrc, photoSrcSet } from "@/lib/photos";
+import { photos, photoPos, photoSrc, photoSrcSet } from "@/lib/photos";
 
 /**
  * On-brand abstract illustrations that fill the image slots of the Relume layout.
@@ -205,6 +205,7 @@ export function Visual({ kind = "consult", photo, className, label, priority = f
           fetchPriority={priority ? "high" : undefined}
           decoding="async"
           className="absolute inset-0 size-full object-cover"
+          style={{ objectPosition: photoPos(photo) }}
         />
       </div>
     );

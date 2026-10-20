@@ -9,7 +9,7 @@ export const photos = {
   serverLights: ["photo-1762163516269-3c143e04175c", "Close-up of a server rack with status lights"],
   dcWhite: ["photo-1564457461758-8ff96e439e83", "Bright, modern data centre with rows of cabinets"],
   rackCables: ["photo-1695668548342-c0c1ad479aee", "Network rack with cabling in a server room"],
-  dashDark: ["photo-1551288049-bebda4e38f71", "Performance analytics dashboard on a laptop screen"],
+  dashDark: ["photo-1551288049-bebda4e38f71", "Performance analytics dashboard on a laptop screen", "50% 75%"],
   dashLaptop: ["photo-1460925895917-afdab827c52f", "Laptop showing business reporting charts"],
   monitoring: ["photo-1526628953301-3e589a6a8b74", "Monitoring dashboard with live metrics"],
   meetingHands: ["photo-1517245386807-bb43f82c33c4", "Consultant explaining a plan during a meeting"],
@@ -34,5 +34,6 @@ export const photos = {
 };
 
 const base = (id) => `https://images.unsplash.com/${id}?auto=format&fit=crop&q=75`;
+export const photoPos = (key) => photos[key][2] || "50% 50%";
 export const photoSrc = (key, w = 1200) => `${base(photos[key][0])}&w=${w}`;
 export const photoSrcSet = (key) => [480, 800, 1200, 1600].map((w) => `${base(photos[key][0])}&w=${w} ${w}w`).join(", ");

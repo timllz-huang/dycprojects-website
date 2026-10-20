@@ -22,12 +22,12 @@ export function Layout520_1() {
           </div>
         </div>
         <div className="grid grid-cols-1 gap-6 md:gap-8 lg:grid-cols-3">
-          <BackgroundCard className="relative flex min-h-[20rem] flex-col justify-end p-6 md:min-h-[22rem] md:p-8">
+          <BackgroundCard className="relative flex min-h-[20rem] flex-col p-6 md:min-h-[22rem] md:p-8">
             <div className="absolute inset-0 z-0">
               <Visual photo="teamTable" kind="consult" className="size-full rounded-none" />
-              <div className="absolute inset-0 bg-gradient-to-t from-blumine-darker via-blumine-darker/85 to-blumine-darker/30" />
+              <div className="absolute inset-0 bg-gradient-to-b from-blumine-darker/85 via-blumine-darker/70 to-blumine-darker/95" />
             </div>
-            <div className="relative z-10">
+            <div className="relative z-10 flex flex-1 flex-col">
               <div className="mb-5 md:mb-6">
                 <Icon name="forum" className="size-12 text-white" />
               </div>
@@ -37,7 +37,7 @@ export function Layout520_1() {
               <p className="text-white">
                 You always know the status of your project.
               </p>
-              <div className="mt-5 flex items-center md:mt-6">
+              <div className="mt-auto flex items-center pt-5 md:pt-6">
                 <Button asChild
                   variant="link-alt"
                   size="link"
@@ -46,12 +46,12 @@ export function Layout520_1() {
               </div>
             </div>
           </BackgroundCard>
-          <BackgroundCard className="relative flex min-h-[20rem] flex-col justify-end p-6 md:min-h-[22rem] md:p-8">
+          <BackgroundCard className="relative flex min-h-[20rem] flex-col p-6 md:min-h-[22rem] md:p-8">
             <div className="absolute inset-0 z-0">
               <Visual photo="whiteboardTeam" kind="pipeline" className="size-full rounded-none" />
-              <div className="absolute inset-0 bg-gradient-to-t from-blumine-darker via-blumine-darker/85 to-blumine-darker/30" />
+              <div className="absolute inset-0 bg-gradient-to-b from-blumine-darker/85 via-blumine-darker/70 to-blumine-darker/95" />
             </div>
-            <div className="relative z-10">
+            <div className="relative z-10 flex flex-1 flex-col">
               <div className="mb-5 md:mb-6">
                 <Icon name="event_available" className="size-12 text-white" />
               </div>
@@ -59,7 +59,7 @@ export function Layout520_1() {
                 Reliable delivery
               </h3>
               <p className="text-white">We do what we say, on time.</p>
-              <div className="mt-5 flex items-center md:mt-6">
+              <div className="mt-auto flex items-center pt-5 md:pt-6">
                 <Button asChild
                   variant="link-alt"
                   size="link"
@@ -68,12 +68,12 @@ export function Layout520_1() {
               </div>
             </div>
           </BackgroundCard>
-          <BackgroundCard className="relative flex min-h-[20rem] flex-col justify-end p-6 md:min-h-[22rem] md:p-8">
+          <BackgroundCard className="relative flex min-h-[20rem] flex-col p-6 md:min-h-[22rem] md:p-8">
             <div className="absolute inset-0 z-0">
               <Visual photo="serverLights" kind="shield" className="size-full rounded-none" />
-              <div className="absolute inset-0 bg-gradient-to-t from-blumine-darker via-blumine-darker/85 to-blumine-darker/30" />
+              <div className="absolute inset-0 bg-gradient-to-b from-blumine-darker/85 via-blumine-darker/70 to-blumine-darker/95" />
             </div>
-            <div className="relative z-10">
+            <div className="relative z-10 flex flex-1 flex-col">
               <div className="mb-5 md:mb-6">
                 <Icon name="support_agent" className="size-12 text-white" />
               </div>
@@ -83,7 +83,7 @@ export function Layout520_1() {
               <p className="text-white">
                 We stay after launch to keep things running.
               </p>
-              <div className="mt-5 flex items-center md:mt-6">
+              <div className="mt-auto flex items-center pt-5 md:pt-6">
                 <Button asChild
                   variant="link-alt"
                   size="link"
