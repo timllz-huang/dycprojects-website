@@ -1,0 +1,28 @@
+{
+  "name": "dycprojects-website",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node tools/build.mjs"
+  },
+  "devDependencies": {
+    "@material-symbols/svg-500": "^0.48.0",
+    "@radix-ui/react-accordion": "^1.3.1",
+    "@radix-ui/react-dialog": "^1.3.1",
+    "@radix-ui/react-select": "^2.4.1",
+    "@radix-ui/react-slot": "^1.5.0",
+    "@radix-ui/react-tabs": "^1.2.1",
+    "@tailwindcss/cli": "^4.3.3",
+    "@tailwindcss/typography": "^0.5.20",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "esbuild": "^0.25.12",
+    "motion": "^14.4.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "relume-icons": "^1.4.0",
+    "tailwind-merge": "^3.7.0",
+    "tailwindcss": "^4.3.3",
+    "tw-animate-css": "^1.4.0"
+  }
+}

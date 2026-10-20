@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /reference/
+Disallow: /src/
+Disallow: /tools/
+Disallow: /.build/
+
+Sitemap: https://dycprojects.com.au/sitemap.xml

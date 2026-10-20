@@ -1,0 +1,66 @@
+{
+  "baseUrl": "https://dycprojects.com.au",
+  "name": "DYC Projects",
+  "legalName": "DYC Projects Pty Ltd",
+  "abn": "",
+  "contactPerson": "Daniel Cui",
+  "description": "DYC Projects is a Sydney-based technology consultancy that designs, builds, migrates and runs secure, scalable cloud and software systems for Australian businesses.",
+  "telephone": "+61451836661",
+  "telephoneDisplay": "0451 836 661",
+  "email": "info@dycprojects.com.au",
+  "formMailTo": "danielcui2004@gmail.com",
+  "address": {
+    "streetAddress": "18 Dobson Crescent",
+    "addressLocality": "Ryde",
+    "addressRegion": "NSW",
+    "postalCode": "2112",
+    "addressCountry": "AU"
+  },
+  "areasServed": ["Sydney", "New South Wales", "Australia"],
+  "sameAs": [],
+  "ogImage": "assets/og-image.png",
+  "pages": {
+    "home": {
+      "path": "",
+      "entry": "src/app/page.js",
+      "title": "DYC Projects | Cloud & Software Engineering Consultancy, Sydney",
+      "description": "DYC Projects designs, builds, migrates and runs secure, scalable cloud and software systems for Australian businesses. Plain-spoken advice, reliable delivery. Book a free consultation."
+    },
+    "services": {
+      "path": "services/",
+      "entry": "src/app/services/page.js",
+      "title": "Services | Cloud, Software, DevOps & Security | DYC Projects",
+      "description": "Cloud architecture and migration, custom software development, DevOps and automation, managed cloud, cloud security and technical consulting for Australian businesses."
+    },
+    "cloud": {
+      "path": "services/cloud-architecture-migration/",
+      "entry": "src/app/services/cloud-architecture-migration/page.js",
+      "title": "Cloud Architecture & Migration (Azure, AWS, Google Cloud) | DYC Projects",
+      "description": "Plan and execute secure, cost-effective moves to Microsoft Azure, AWS or Google Cloud, including hybrid setups. Assessment, architecture, migration and ongoing optimisation."
+    },
+    "software": {
+      "path": "services/custom-software-development/",
+      "entry": "src/app/services/custom-software-development/page.js",
+      "title": "Custom Software Development | Web Apps, APIs & Integrations | DYC Projects",
+      "description": "Web applications, internal business tools, APIs and system integrations built around the way your business works. Sydney-based, delivering across Australia."
+    },
+    "devops": {
+      "path": "services/devops-automation/",
+      "entry": "src/app/services/devops-automation/page.js",
+      "title": "DevOps & Automation | CI/CD, Infrastructure as Code | DYC Projects",
+      "description": "CI/CD pipelines, infrastructure as code, containerisation and automated deployments that speed up delivery and reduce errors."
+    },
+    "contact": {
+      "path": "contact/",
+      "entry": "src/app/contact/page.jsx",
+      "title": "Contact | Book a Free Consultation | DYC Projects",
+      "description": "Book a free consultation with DYC Projects to talk through your cloud, software or DevOps needs. Call 0451 836 661 or email info@dycprojects.com.au."
+    },
+    "privacy": {
+      "path": "privacy/",
+      "entry": "src/app/privacy/page.jsx",
+      "title": "Privacy Policy | DYC Projects",
+      "description": "How DYC Projects Pty Ltd collects, uses and protects personal information submitted through this website."
+    }
+  }
+}
