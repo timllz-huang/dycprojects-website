@@ -52,7 +52,7 @@ export function Layout10() {
             </div>
           </div>
           <div>
-            <Visual kind="consult" className="w-full rounded-image" />
+            <Visual photo="meetingHands" kind="consult" className="w-full rounded-image" />
           </div>
         </div>
       </div>

@@ -59,7 +59,7 @@ export function Layout504() {
           >
             <Card className="grid grid-cols-1 md:grid-cols-2 md:items-center">
               <div className="aspect-square">
-                <Visual kind="cloud" className="size-full rounded-none" />
+                <Visual photo="fiber" kind="cloud" className="size-full rounded-none" />
               </div>
               <div className="p-6 md:p-8 lg:p-12">
                 <p className="mb-3 font-semibold md:mb-4">Data</p>
@@ -83,7 +83,7 @@ export function Layout504() {
           >
             <Card className="grid grid-cols-1 md:grid-cols-2 md:items-center">
               <div className="aspect-square">
-                <Visual kind="hybrid" className="size-full rounded-none" />
+                <Visual photo="dcAisle" kind="hybrid" className="size-full rounded-none" />
               </div>
               <div className="p-6 md:p-8 lg:p-12">
                 <p className="mb-3 font-semibold md:mb-4">Applications</p>
@@ -107,7 +107,7 @@ export function Layout504() {
           >
             <Card className="grid grid-cols-1 md:grid-cols-2 md:items-center">
               <div className="aspect-square">
-                <Visual kind="pipeline" className="size-full rounded-none" />
+                <Visual photo="monitoring" kind="pipeline" className="size-full rounded-none" />
               </div>
               <div className="p-6 md:p-8 lg:p-12">
                 <p className="mb-3 font-semibold md:mb-4">Go-live</p>

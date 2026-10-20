@@ -24,7 +24,7 @@ export function Layout520_1() {
         <div className="grid grid-cols-1 gap-6 md:gap-8 lg:grid-cols-3">
           <BackgroundCard className="relative flex min-h-[20rem] flex-col justify-end p-6 md:min-h-[22rem] md:p-8">
             <div className="absolute inset-0 z-0">
-              <Visual kind="consult" className="size-full rounded-none" />
+              <Visual photo="teamTable" kind="consult" className="size-full rounded-none" />
               <div className="absolute inset-0 bg-gradient-to-t from-blumine-darker via-blumine-darker/85 to-blumine-darker/30" />
             </div>
             <div className="relative z-10">
@@ -48,7 +48,7 @@ export function Layout520_1() {
           </BackgroundCard>
           <BackgroundCard className="relative flex min-h-[20rem] flex-col justify-end p-6 md:min-h-[22rem] md:p-8">
             <div className="absolute inset-0 z-0">
-              <Visual kind="pipeline" className="size-full rounded-none" />
+              <Visual photo="whiteboardTeam" kind="pipeline" className="size-full rounded-none" />
               <div className="absolute inset-0 bg-gradient-to-t from-blumine-darker via-blumine-darker/85 to-blumine-darker/30" />
             </div>
             <div className="relative z-10">
@@ -70,7 +70,7 @@ export function Layout520_1() {
           </BackgroundCard>
           <BackgroundCard className="relative flex min-h-[20rem] flex-col justify-end p-6 md:min-h-[22rem] md:p-8">
             <div className="absolute inset-0 z-0">
-              <Visual kind="shield" className="size-full rounded-none" />
+              <Visual photo="serverLights" kind="shield" className="size-full rounded-none" />
               <div className="absolute inset-0 bg-gradient-to-t from-blumine-darker via-blumine-darker/85 to-blumine-darker/30" />
             </div>
             <div className="relative z-10">

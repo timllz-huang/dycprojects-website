@@ -51,7 +51,7 @@ export function Layout254() {
             </div>
           </div>
           <div className="relative order-last w-full sm:col-span-2 lg:order-none lg:col-span-1">
-            <Visual kind="chart" className="h-auto w-full rounded-image" />
+            <Visual photo="dashLaptop" kind="chart" className="h-auto w-full rounded-image" />
           </div>
           <div className="grid w-full grid-cols-1 gap-x-20 gap-y-12 md:gap-y-16">
             <div className="flex flex-col items-center text-center">

@@ -1,5 +1,6 @@
 import React, { useId } from "react";
 import { cn } from "@/lib/utils";
+import { photos, photoSrc, photoSrcSet } from "@/lib/photos";
 
 /**
  * On-brand abstract illustrations that fill the image slots of the Relume layout.
@@ -189,9 +190,25 @@ function Motif({ kind }) {
   }
 }
 
-export function Visual({ kind = "consult", className, label }) {
+export function Visual({ kind = "consult", photo, className, label, priority = false, sizes = "(min-width: 992px) 50vw, 100vw" }) {
   const id = useId().replace(/:/g, "");
   const sized = /\b(size-full|h-full|h-\[|aspect-)/.test(className || "");
+  if (photo && photos[photo]) {
+    return (
+      <div className={cn("relative overflow-hidden rounded-image bg-blumine-darker", !sized && "aspect-square w-full", className)}>
+        <img
+          src={photoSrc(photo)}
+          srcSet={photoSrcSet(photo)}
+          sizes={sizes}
+          alt={label || photos[photo][1]}
+          loading={priority ? "eager" : "lazy"}
+          fetchPriority={priority ? "high" : undefined}
+          decoding="async"
+          className="absolute inset-0 size-full object-cover"
+        />
+      </div>
+    );
+  }
   return (
     <div
       role={label ? "img" : undefined}

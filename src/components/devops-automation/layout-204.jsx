@@ -12,7 +12,7 @@ export function Layout204() {
       <div className="container">
         <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2 lg:gap-x-20">
           <div className="order-2 md:order-1">
-            <Visual kind="code" className="w-full rounded-image" />
+            <Visual photo="codePython" kind="code" className="w-full rounded-image" />
           </div>
           <div className="order-1 md:order-2">
             <p className="mb-3 font-semibold md:mb-4">Infrastructure</p>

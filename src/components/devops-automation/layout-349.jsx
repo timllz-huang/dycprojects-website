@@ -100,7 +100,7 @@ export function Layout349() {
                     ><a href={href("/contact/")}>Get in touch</a></Button>
                   </div>
                   <div className="mt-10 block w-full md:hidden">
-                    <Visual kind="consult" className="w-full rounded-image" />
+                    <Visual photo="teamTable" kind="consult" className="w-full rounded-image" />
                   </div>
                 </div>
               </div>
@@ -128,7 +128,7 @@ export function Layout349() {
                     ><a href={href("/contact/")}>Get in touch</a></Button>
                   </div>
                   <div className="mt-10 block w-full md:hidden">
-                    <Visual kind="network" className="w-full rounded-image" />
+                    <Visual photo="whiteboard" kind="network" className="w-full rounded-image" />
                   </div>
                 </div>
               </div>
@@ -156,7 +156,7 @@ export function Layout349() {
                     ><a href={href("/contact/")}>Get in touch</a></Button>
                   </div>
                   <div className="mt-10 block w-full md:hidden">
-                    <Visual kind="code" className="w-full rounded-image" />
+                    <Visual photo="codeJava" kind="code" className="w-full rounded-image" />
                   </div>
                 </div>
               </div>
@@ -184,16 +184,16 @@ export function Layout349() {
                     ><a href={href("/contact/")}>Get in touch</a></Button>
                   </div>
                   <div className="mt-10 block w-full md:hidden">
-                    <Visual kind="pipeline" className="w-full rounded-image" />
+                    <Visual photo="dashDark" kind="pipeline" className="w-full rounded-image" />
                   </div>
                 </div>
               </div>
             </div>
             <div className="sticky top-0 hidden h-screen md:flex md:flex-col md:items-center md:justify-center">
-              <Visual kind="consult" className={intersectionAnimation.getImageClassName(0) + " aspect-square transition-opacity duration-300"} />
-              <Visual kind="network" className={intersectionAnimation.getImageClassName(1) + " aspect-square transition-opacity duration-300"} />
-              <Visual kind="code" className={intersectionAnimation.getImageClassName(2) + " aspect-square transition-opacity duration-300"} />
-              <Visual kind="pipeline" className={intersectionAnimation.getImageClassName(3) + " aspect-square transition-opacity duration-300"} />
+              <Visual photo="teamTable" kind="consult" className={intersectionAnimation.getImageClassName(0) + " aspect-square transition-opacity duration-300"} />
+              <Visual photo="whiteboard" kind="network" className={intersectionAnimation.getImageClassName(1) + " aspect-square transition-opacity duration-300"} />
+              <Visual photo="codeJava" kind="code" className={intersectionAnimation.getImageClassName(2) + " aspect-square transition-opacity duration-300"} />
+              <Visual photo="dashDark" kind="pipeline" className={intersectionAnimation.getImageClassName(3) + " aspect-square transition-opacity duration-300"} />
             </div>
           </div>
         </div>

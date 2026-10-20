@@ -32,7 +32,7 @@ export function Layout1_1() {
             </div>
           </div>
           <div>
-            <Visual kind="chart" className="w-full rounded-image" />
+            <Visual photo="teamWorking" kind="chart" className="w-full rounded-image" />
           </div>
         </div>
       </div>

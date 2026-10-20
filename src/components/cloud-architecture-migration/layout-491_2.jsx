@@ -117,7 +117,7 @@ export function Layout491_2() {
                     transition={{ duration: 0.2 }}
                     exit={{ opacity: 0 }}
                   >
-                    <Visual kind="hybrid" className="rounded-image" />
+                    <Visual photo="rackCables" kind="hybrid" className="rounded-image" />
                   </motion.div>
                 </AnimatePresence>
               </TabsContent>
@@ -132,7 +132,7 @@ export function Layout491_2() {
                     transition={{ duration: 0.2 }}
                     exit={{ opacity: 0 }}
                   >
-                    <Visual kind="shield" className="rounded-image" />
+                    <Visual photo="circuit" kind="shield" className="rounded-image" />
                   </motion.div>
                 </AnimatePresence>
               </TabsContent>
@@ -147,7 +147,7 @@ export function Layout491_2() {
                     transition={{ duration: 0.2 }}
                     exit={{ opacity: 0 }}
                   >
-                    <Visual kind="network" className="rounded-image" />
+                    <Visual photo="handRack" kind="network" className="rounded-image" />
                   </motion.div>
                 </AnimatePresence>
               </TabsContent>

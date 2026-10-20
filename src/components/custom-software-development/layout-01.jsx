@@ -33,7 +33,7 @@ export function Layout1() {
             </div>
           </div>
           <div>
-            <Visual kind="code" className="w-full rounded-image" />
+            <Visual photo="codePython" kind="code" className="w-full rounded-image" />
           </div>
         </div>
       </div>

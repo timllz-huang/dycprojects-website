@@ -117,7 +117,7 @@ export function Layout491() {
                     transition={{ duration: 0.2 }}
                     exit={{ opacity: 0 }}
                   >
-                    <Visual kind="consult" className="rounded-image" />
+                    <Visual photo="twoColleagues" kind="consult" className="rounded-image" />
                   </motion.div>
                 </AnimatePresence>
               </TabsContent>
@@ -132,7 +132,7 @@ export function Layout491() {
                     transition={{ duration: 0.2 }}
                     exit={{ opacity: 0 }}
                   >
-                    <Visual kind="pipeline" className="rounded-image" />
+                    <Visual photo="handRack" kind="pipeline" className="rounded-image" />
                   </motion.div>
                 </AnimatePresence>
               </TabsContent>
@@ -147,7 +147,7 @@ export function Layout491() {
                     transition={{ duration: 0.2 }}
                     exit={{ opacity: 0 }}
                   >
-                    <Visual kind="chart" className="rounded-image" />
+                    <Visual photo="dashLaptop" kind="chart" className="rounded-image" />
                   </motion.div>
                 </AnimatePresence>
               </TabsContent>

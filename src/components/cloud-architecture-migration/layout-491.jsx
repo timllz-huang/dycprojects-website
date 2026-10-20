@@ -117,7 +117,7 @@ export function Layout491() {
                     transition={{ duration: 0.2 }}
                     exit={{ opacity: 0 }}
                   >
-                    <Visual kind="chart" className="rounded-image" />
+                    <Visual photo="dashDark" kind="chart" className="rounded-image" />
                   </motion.div>
                 </AnimatePresence>
               </TabsContent>
@@ -132,7 +132,7 @@ export function Layout491() {
                     transition={{ duration: 0.2 }}
                     exit={{ opacity: 0 }}
                   >
-                    <Visual kind="shield" className="rounded-image" />
+                    <Visual photo="padlock" kind="shield" className="rounded-image" />
                   </motion.div>
                 </AnimatePresence>
               </TabsContent>
@@ -147,7 +147,7 @@ export function Layout491() {
                     transition={{ duration: 0.2 }}
                     exit={{ opacity: 0 }}
                   >
-                    <Visual kind="network" className="rounded-image" />
+                    <Visual photo="patchPanel" kind="network" className="rounded-image" />
                   </motion.div>
                 </AnimatePresence>
               </TabsContent>

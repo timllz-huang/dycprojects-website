@@ -84,7 +84,7 @@ export function Layout507() {
                   </div>
                 </div>
                 <div className="h-full">
-                  <Visual kind="consult" className="aspect-square w-full rounded-image" />
+                  <Visual photo="bizMeeting" kind="consult" className="aspect-square w-full rounded-image" />
                 </div>
               </div>
             </TabsContent>
@@ -112,7 +112,7 @@ export function Layout507() {
                   </div>
                 </div>
                 <div className="h-full">
-                  <Visual kind="network" className="aspect-square w-full rounded-image" />
+                  <Visual photo="whiteboard" kind="network" className="aspect-square w-full rounded-image" />
                 </div>
               </div>
             </TabsContent>
@@ -140,7 +140,7 @@ export function Layout507() {
                   </div>
                 </div>
                 <div className="h-full">
-                  <Visual kind="code" className="aspect-square w-full rounded-image" />
+                  <Visual photo="codePython" kind="code" className="aspect-square w-full rounded-image" />
                 </div>
               </div>
             </TabsContent>
@@ -168,7 +168,7 @@ export function Layout507() {
                   </div>
                 </div>
                 <div className="h-full">
-                  <Visual kind="cloud" className="aspect-square w-full rounded-image" />
+                  <Visual photo="dcAisle" kind="cloud" className="aspect-square w-full rounded-image" />
                 </div>
               </div>
             </TabsContent>
@@ -196,7 +196,7 @@ export function Layout507() {
                   </div>
                 </div>
                 <div className="h-full">
-                  <Visual kind="chart" className="aspect-square w-full rounded-image" />
+                  <Visual photo="dashDark" kind="chart" className="aspect-square w-full rounded-image" />
                 </div>
               </div>
             </TabsContent>
@@ -223,7 +223,7 @@ export function Layout507() {
                   </div>
                 </div>
                 <div className="h-full">
-                  <Visual kind="shield" className="aspect-square w-full rounded-image" />
+                  <Visual photo="teamLaptop" kind="shield" className="aspect-square w-full rounded-image" />
                 </div>
               </div>
             </TabsContent>

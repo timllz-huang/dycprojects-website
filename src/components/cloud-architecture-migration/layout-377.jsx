@@ -101,7 +101,7 @@ export function Layout377() {
             </Card>
             <Card className="flex flex-col sm:col-span-2 sm:col-start-1 sm:row-span-2 sm:row-start-3 lg:col-span-2 lg:col-start-3 lg:row-span-2 lg:row-start-1">
               <div className="flex items-center justify-center">
-                <Visual kind="chart" className="w-full aspect-[3/2] rounded-none" />
+                <Visual photo="dashLaptop" kind="chart" className="w-full aspect-[3/2] rounded-none" />
               </div>
               <div className="flex flex-1 flex-col justify-center p-6 md:p-8 lg:p-12">
                 <div>

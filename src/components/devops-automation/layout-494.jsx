@@ -115,7 +115,7 @@ export function Layout494() {
                         transition={{ duration: 0.2 }}
                         className="w-full"
                       >
-                        <Visual kind="hybrid" className="rounded-image" />
+                        <Visual photo="dcRacks" kind="hybrid" className="rounded-image" />
                       </motion.div>
                     </AnimatePresence>
                   </TabsContent>
@@ -131,7 +131,7 @@ export function Layout494() {
                         transition={{ duration: 0.2 }}
                         className="w-full"
                       >
-                        <Visual kind="network" className="rounded-image" />
+                        <Visual photo="fiber" kind="network" className="rounded-image" />
                       </motion.div>
                     </AnimatePresence>
                   </TabsContent>
@@ -147,7 +147,7 @@ export function Layout494() {
                         transition={{ duration: 0.2 }}
                         className="w-full"
                       >
-                        <Visual kind="cloud" className="rounded-image" />
+                        <Visual photo="serverLights" kind="cloud" className="rounded-image" />
                       </motion.div>
                     </AnimatePresence>
                   </TabsContent>

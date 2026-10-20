@@ -2,6 +2,7 @@
 export const services = [
   {
     id: "cloud-architecture",
+    photo: "dcRacks",
     icon: "cloud",
     visual: "cloud",
     title: "Cloud architecture & migration",
@@ -10,6 +11,7 @@ export const services = [
   },
   {
     id: "custom-software",
+    photo: "codeHtml",
     icon: "web",
     visual: "code",
     title: "Custom software development",
@@ -18,6 +20,7 @@ export const services = [
   },
   {
     id: "devops",
+    photo: "deskMacbook",
     icon: "automation",
     visual: "pipeline",
     title: "DevOps & automation",
@@ -26,6 +29,7 @@ export const services = [
   },
   {
     id: "managed-cloud",
+    photo: "monitoring",
     icon: "monitoring",
     visual: "chart",
     title: "Managed cloud & support",
@@ -34,6 +38,7 @@ export const services = [
   },
   {
     id: "cloud-security",
+    photo: "circuit",
     icon: "security",
     visual: "shield",
     title: "Cloud security & compliance",
@@ -42,6 +47,7 @@ export const services = [
   },
   {
     id: "consulting",
+    photo: "planningPaper",
     icon: "tactic",
     visual: "consult",
     title: "Technical consulting",

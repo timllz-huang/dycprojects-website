@@ -30,7 +30,7 @@ export function Layout520() {
                 className="relative flex min-h-[20rem] scroll-mt-28 flex-col justify-end p-6 md:min-h-[22rem] md:p-8"
               >
                 <div className="absolute inset-0 z-0">
-                  <Visual kind={s.visual} className="size-full rounded-none" />
+                  <Visual photo={s.photo} kind={s.visual} sizes="(min-width: 992px) 33vw, (min-width: 768px) 50vw, 100vw" className="size-full rounded-none" />
                   <div className="absolute inset-0 bg-gradient-to-t from-blumine-darkest via-blumine-darkest/85 to-blumine-darkest/30" />
                 </div>
                 <div className="relative z-10">

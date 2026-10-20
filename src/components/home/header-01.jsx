@@ -26,7 +26,7 @@ export function Header1() {
             </div>
           </div>
           <div>
-            <Visual kind="network" className="w-full rounded-image" />
+            <Visual priority photo="engineerDc" kind="network" className="w-full rounded-image" />
           </div>
         </div>
       </div>

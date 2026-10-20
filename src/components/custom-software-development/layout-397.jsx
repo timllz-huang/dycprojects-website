@@ -63,7 +63,7 @@ export function Layout397() {
                 </div>
               </div>
               <div className="flex w-full flex-col items-center justify-center self-start">
-                <Visual kind="consult" className="w-full aspect-[3/2] rounded-none" />
+                <Visual photo="whiteboardTeam" kind="consult" className="w-full aspect-[3/2] rounded-none" />
               </div>
             </Card>
           </div>
@@ -88,7 +88,7 @@ export function Layout397() {
                 </div>
               </div>
               <div className="flex w-full flex-col items-center justify-center self-start">
-                <Visual kind="code" className="w-full aspect-[3/2] rounded-none" />
+                <Visual photo="codeJava" kind="code" className="w-full aspect-[3/2] rounded-none" />
               </div>
             </Card>
             <Card className="flex flex-col">
@@ -155,7 +155,7 @@ export function Layout397() {
                 </div>
               </div>
               <div className="flex w-full flex-col items-center justify-center self-start">
-                <Visual kind="pipeline" className="w-full aspect-[3/2] rounded-none" />
+                <Visual photo="deskMacbook" kind="pipeline" className="w-full aspect-[3/2] rounded-none" />
               </div>
             </Card>
           </div>

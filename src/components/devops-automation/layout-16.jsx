@@ -53,7 +53,7 @@ export function Layout16() {
             </div>
           </div>
           <div>
-            <Visual kind="pipeline" className="w-full rounded-image" />
+            <Visual photo="codeHtml" kind="pipeline" className="w-full rounded-image" />
           </div>
         </div>
       </div>

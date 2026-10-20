@@ -118,7 +118,7 @@ export function Layout491_1() {
                     transition={{ duration: 0.2 }}
                     exit={{ opacity: 0 }}
                   >
-                    <Visual kind="cloud" className="rounded-image" />
+                    <Visual photo="whiteboard" kind="cloud" className="rounded-image" />
                   </motion.div>
                 </AnimatePresence>
               </TabsContent>
@@ -133,7 +133,7 @@ export function Layout491_1() {
                     transition={{ duration: 0.2 }}
                     exit={{ opacity: 0 }}
                   >
-                    <Visual kind="pipeline" className="rounded-image" />
+                    <Visual photo="planningPaper" kind="pipeline" className="rounded-image" />
                   </motion.div>
                 </AnimatePresence>
               </TabsContent>
@@ -148,7 +148,7 @@ export function Layout491_1() {
                     transition={{ duration: 0.2 }}
                     exit={{ opacity: 0 }}
                   >
-                    <Visual kind="network" className="rounded-image" />
+                    <Visual photo="dcWhite" kind="network" className="rounded-image" />
                   </motion.div>
                 </AnimatePresence>
               </TabsContent>

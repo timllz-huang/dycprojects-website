@@ -96,7 +96,7 @@ export function Layout367() {
                 </div>
               </div>
               <div>
-                <Visual kind="consult" className="w-full aspect-[3/2] rounded-none" />
+                <Visual photo="bizMeeting" kind="consult" className="w-full aspect-[3/2] rounded-none" />
               </div>
             </Card>
           </div>
