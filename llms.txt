@@ -1,15 +1,16 @@
 # DYC Projects
 
-> DYC Projects is a Sydney-based technology consultancy that designs, builds, migrates and runs secure, scalable cloud and software systems for Australian businesses.
+> DYC Projects is a Sydney technology consultancy that designs, builds, migrates and runs secure, scalable cloud and software systems for Australian businesses.
 
 Contact: 0451 836 661 · info@dycprojects.com.au
 Location: Ryde NSW, Australia
 
 ## Pages
-- [DYC Projects](https://dycprojects.com.au/): DYC Projects designs, builds, migrates and runs secure, scalable cloud and software systems for Australian businesses. Plain-spoken advice, reliable delivery. Book a free consultation.
+- [DYC Projects](https://dycprojects.com.au/): Cloud migration, custom software and DevOps for growing Australian businesses. Secure systems on Azure, AWS and Google Cloud, explained in plain English. Book a free consultation.
 - [Services](https://dycprojects.com.au/services/): Cloud architecture and migration, custom software development, DevOps and automation, managed cloud, cloud security and technical consulting for Australian businesses.
-- [Cloud Architecture & Migration (Azure, AWS, Google Cloud)](https://dycprojects.com.au/services/cloud-architecture-migration/): Plan and execute secure, cost-effective moves to Microsoft Azure, AWS or Google Cloud, including hybrid setups. Assessment, architecture, migration and ongoing optimisation.
-- [Custom Software Development](https://dycprojects.com.au/services/custom-software-development/): Web applications, internal business tools, APIs and system integrations built around the way your business works. Sydney-based, delivering across Australia.
-- [DevOps & Automation](https://dycprojects.com.au/services/devops-automation/): CI/CD pipelines, infrastructure as code, containerisation and automated deployments that speed up delivery and reduce errors.
+- [Cloud Architecture and Migration (Azure, AWS, Google Cloud)](https://dycprojects.com.au/services/cloud-architecture-migration/): Plan and run secure, cost effective moves to Microsoft Azure, AWS or Google Cloud, including hybrid setups. Assessment, architecture, migration and ongoing optimisation.
+- [Custom Software Development](https://dycprojects.com.au/services/custom-software-development/): Web applications, internal business tools, APIs and system integrations built around the way your business works. Based in Sydney, working across Australia.
+- [DevOps and Automation](https://dycprojects.com.au/services/devops-automation/): CI/CD pipelines, infrastructure as code, containerisation and automated deployments that speed up delivery and reduce errors.
 - [Contact](https://dycprojects.com.au/contact/): Book a free consultation with DYC Projects to talk through your cloud, software or DevOps needs. Call 0451 836 661 or email info@dycprojects.com.au.
 - [Privacy Policy](https://dycprojects.com.au/privacy/): How DYC Projects Pty Ltd collects, uses and protects personal information submitted through this website.
+- [Terms of Use](https://dycprojects.com.au/terms/): Terms that apply to using the dycprojects.com.au website.

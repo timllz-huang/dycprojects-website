@@ -1,197 +1,262 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import { Container, Eyebrow, Reveal, SubmitButton, motion } from "@/components/ui";
+import { Spotlight } from "@/components/motion";
 import { Icon } from "@/components/icon";
 import { href, site } from "@/lib/site";
 import { services } from "@/lib/services";
+import { cn } from "@/lib/utils";
 
-const field =
-  "w-full rounded-form border border-scheme-border bg-white px-3 py-2.5 text-regular text-neutral-darkest placeholder:text-neutral transition-colors focus:border-blumine focus:outline-none focus:ring-2 focus:ring-blumine/20";
-const label = "mb-2 block text-small font-semibold";
+const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+const fieldBase =
+  "w-full rounded-lg border bg-paper px-3 py-2 text-base text-ink placeholder:text-ink-muted focus:outline-none focus:ring-4 " +
+  motion;
+
+function Field({ id, label, required, error, children }) {
+  return (
+    <div>
+      <label htmlFor={id} className="mb-2 block text-sm font-semibold text-ink">
+        {label}
+        {required && <span className="text-ink-muted"> (required)</span>}
+      </label>
+      {children}
+      {error && (
+        <p id={`${id}-error`} className="mt-2 flex items-center gap-2 text-sm text-danger">
+          <Icon name="warning-circle" className="size-4" />
+          {error}
+        </p>
+      )}
+    </div>
+  );
+}
+
+function validate(v) {
+  const e = {};
+  if (!v.name.trim()) e.name = "Enter your name.";
+  if (!v.email.trim()) e.email = "Enter your email address.";
+  else if (!EMAIL.test(v.email.trim())) e.email = "Enter an email address like name@company.com.au.";
+  if (v.message.trim().length < 10) e.message = "Tell us a little more about what you need.";
+  return e;
+}
 
 function ContactForm() {
-  const [status, setStatus] = useState("idle"); // idle | sending | sent | error
-  const endpoint = `https://formsubmit.co/${site.formMailTo}`;
+  const [values, setValues] = useState({ name: "", company: "", email: "", phone: "", service: "", message: "" });
+  const [errors, setErrors] = useState({});
+  const [touched, setTouched] = useState({});
+  const [status, setStatus] = useState("idle"); // idle | sending | sent | failed
 
   useEffect(() => {
     if (new URLSearchParams(window.location.search).get("sent") === "1") setStatus("sent");
   }, []);
 
+  const set = (k) => (e) => {
+    const next = { ...values, [k]: e.target.value };
+    setValues(next);
+    if (touched[k]) setErrors(validate(next));
+  };
+  const blur = (k) => () => {
+    setTouched((t) => ({ ...t, [k]: true }));
+    setErrors(validate(values));
+  };
+  const cls = (k) =>
+    cn(fieldBase, errors[k] && touched[k] ? "border-danger focus:ring-danger/15" : "border-line focus:border-brand focus:ring-brand/15");
+  const aria = (k) => ({
+    "aria-invalid": Boolean(errors[k] && touched[k]),
+    "aria-describedby": errors[k] && touched[k] ? `${k}-error` : undefined,
+  });
+
   async function onSubmit(e) {
     e.preventDefault();
-    const form = e.currentTarget;
+    const found = validate(values);
+    setErrors(found);
+    setTouched({ name: true, email: true, message: true });
+    if (Object.keys(found).length) {
+      document.getElementById(Object.keys(found)[0])?.focus();
+      return;
+    }
     setStatus("sending");
     try {
-      const res = await fetch(endpoint.replace("formsubmit.co/", "formsubmit.co/ajax/"), {
+      const body = new FormData(e.currentTarget);
+      const res = await fetch(`https://formsubmit.co/ajax/${site.formMailTo}`, {
         method: "POST",
         headers: { Accept: "application/json" },
-        body: new FormData(form),
+        body,
       });
       const data = await res.json().catch(() => ({}));
-      if (!res.ok || String(data.success) === "false") throw new Error(data.message || "Send failed");
-      form.reset();
+      if (!res.ok || String(data.success) === "false") throw new Error("send failed");
       setStatus("sent");
     } catch {
-      setStatus("error");
+      setStatus("failed");
     }
   }
 
   if (status === "sent") {
     return (
-      <Card className="p-8 md:p-10" role="status">
-        <Icon name="task_alt" className="mb-5 size-12 text-puerto-rico-dark" />
-        <h2 className="mb-3 text-h4 font-bold">Thanks, we have your message</h2>
-        <p>
-          We will be in touch within one business day. If it is urgent, call us on{" "}
-          <a className="underline" href={`tel:${site.telephone}`}>
+      <div role="status" className="rounded-3xl border border-line bg-paper p-8 md:p-12">
+        <span className="flex size-12 items-center justify-center rounded-full bg-brand-soft text-brand">
+          <Icon name="check" className="size-6" />
+        </span>
+        <h2 className="mt-6 text-2xl">Thanks, we have your message</h2>
+        <p className="mt-2 text-base text-ink-soft">
+          We will reply within one business day. If it is urgent, call{" "}
+          <a className="font-semibold text-brand underline" href={`tel:${site.telephone}`}>
             {site.telephoneDisplay}
           </a>
           .
         </p>
-      </Card>
+      </div>
     );
   }
 
   return (
-    <Card className="p-6 md:p-8 lg:p-10">
-      <form action={endpoint} method="POST" onSubmit={onSubmit} className="grid grid-cols-1 gap-5 md:grid-cols-2">
-        <input type="hidden" name="_subject" value="New enquiry from dycprojects.com.au" />
-        <input type="hidden" name="_template" value="table" />
-        <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_next" value={`${site.baseUrl}/contact/?sent=1`} />
-        <input type="text" name="_honey" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
+    <form
+      noValidate
+      onSubmit={onSubmit}
+      action={`https://formsubmit.co/${site.formMailTo}`}
+      method="POST"
+      className="rounded-3xl border border-line bg-paper p-6 md:p-8"
+    >
+      <input type="hidden" name="_subject" value="New enquiry from dycprojects.com.au" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_next" value={`${site.baseUrl}/contact/?sent=1`} />
+      <input type="text" name="_honey" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
 
-        <div>
-          <label htmlFor="name" className={label}>
-            Name *
-          </label>
-          <input id="name" name="name" required autoComplete="name" className={field} />
-        </div>
-        <div>
-          <label htmlFor="company" className={label}>
-            Company
-          </label>
-          <input id="company" name="company" autoComplete="organization" className={field} />
-        </div>
-        <div>
-          <label htmlFor="email" className={label}>
-            Email *
-          </label>
-          <input id="email" name="email" type="email" required autoComplete="email" className={field} />
-        </div>
-        <div>
-          <label htmlFor="phone" className={label}>
-            Phone
-          </label>
-          <input id="phone" name="phone" type="tel" autoComplete="tel" className={field} />
+      <div className="grid gap-6 md:grid-cols-2">
+        <Field id="name" label="Name" required error={touched.name && errors.name}>
+          <input id="name" name="name" autoComplete="name" value={values.name} onChange={set("name")} onBlur={blur("name")} className={cls("name")} {...aria("name")} />
+        </Field>
+        <Field id="company" label="Company">
+          <input id="company" name="company" autoComplete="organization" value={values.company} onChange={set("company")} className={cls("company")} />
+        </Field>
+        <Field id="email" label="Email" required error={touched.email && errors.email}>
+          <input id="email" name="email" type="email" autoComplete="email" inputMode="email" value={values.email} onChange={set("email")} onBlur={blur("email")} className={cls("email")} {...aria("email")} />
+        </Field>
+        <Field id="phone" label="Phone">
+          <input id="phone" name="phone" type="tel" autoComplete="tel" value={values.phone} onChange={set("phone")} className={cls("phone")} />
+        </Field>
+        <div className="md:col-span-2">
+          <Field id="service" label="What can we help with?">
+            <select id="service" name="service" value={values.service} onChange={set("service")} className={cls("service")}>
+              <option value="">Choose a service</option>
+              {services.map((s) => (
+                <option key={s.id}>{s.title}</option>
+              ))}
+              <option>Not sure yet</option>
+            </select>
+          </Field>
         </div>
         <div className="md:col-span-2">
-          <label htmlFor="service" className={label}>
-            What can we help with?
-          </label>
-          <select id="service" name="service" className={field} defaultValue="">
-            <option value="" disabled>
-              Choose a service
-            </option>
-            {services.map((s) => (
-              <option key={s.id}>{s.title}</option>
-            ))}
-            <option>Not sure yet</option>
-          </select>
+          <Field id="message" label="Message" required error={touched.message && errors.message}>
+            <textarea
+              id="message"
+              name="message"
+              rows={6}
+              value={values.message}
+              onChange={set("message")}
+              onBlur={blur("message")}
+              placeholder="Tell us about your current systems and what you would like to achieve."
+              className={cn(cls("message"), "resize-y")}
+              {...aria("message")}
+            />
+          </Field>
         </div>
-        <div className="md:col-span-2">
-          <label htmlFor="message" className={label}>
-            Message *
-          </label>
-          <textarea
-            id="message"
-            name="message"
-            required
-            rows={6}
-            placeholder="Tell us a little about your systems and what you would like to achieve."
-            className={field + " min-h-[9rem] resize-y"}
-          />
-        </div>
-        <div className="flex flex-col gap-4 md:col-span-2 md:flex-row md:items-center md:justify-between">
-          <p className="text-small text-neutral-dark">
-            We only use your details to respond to your enquiry. See our{" "}
-            <a className="underline" href={href("/privacy/")}>
-              privacy policy
+      </div>
+
+      {status === "failed" && (
+        <p role="alert" className="mt-6 flex items-start gap-2 rounded-lg bg-danger/5 p-3 text-sm text-danger">
+          <Icon name="warning-circle" className="size-4" />
+          <span>
+            We could not send your message. Please try again, or email{" "}
+            <a className="font-semibold underline" href={`mailto:${site.email}`}>
+              {site.email}
             </a>
             .
-          </p>
-          <Button type="submit" disabled={status === "sending"} className="px-6 py-2.5">
-            {status === "sending" ? "Sending…" : "Send enquiry"}
-          </Button>
-        </div>
-        {status === "error" && (
-          <p className="text-small text-red-700 md:col-span-2" role="alert">
-            Sorry, your message could not be sent. Please email{" "}
-            <a className="underline" href={`mailto:${site.email}`}>
-              {site.email}
-            </a>{" "}
-            or call {site.telephoneDisplay}.
-          </p>
-        )}
-      </form>
-    </Card>
+          </span>
+        </p>
+      )}
+
+      <div className="mt-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+        <p className="text-sm text-ink-muted">
+          We only use your details to reply. See our{" "}
+          <a className="underline hover:text-brand" href={href("/privacy/")}>
+            privacy policy
+          </a>
+          .
+        </p>
+        <SubmitButton disabled={status === "sending"} aria-busy={status === "sending"}>
+          {status === "sending" ? "Sending your enquiry" : "Send enquiry"}
+        </SubmitButton>
+      </div>
+    </form>
   );
 }
 
 export default function Page() {
   const a = site.address;
   const details = [
-    ["call", "Phone", site.telephoneDisplay, `tel:${site.telephone}`],
-    ["mail", "Email", site.email, `mailto:${site.email}`],
-    ["location_on", "Office", `${a.streetAddress}, ${a.addressLocality} ${a.addressRegion} ${a.postalCode}`, null],
+    ["phone", "Phone", site.telephoneDisplay, `tel:${site.telephone}`],
+    ["envelope-simple", "Email", site.email, `mailto:${site.email}`],
+    ["map-pin", "Office", `${a.streetAddress}, ${a.addressLocality} ${a.addressRegion} ${a.postalCode}`, null],
   ];
   return (
-    <>
-      <section className="px-[5%] pt-16 md:pt-24 lg:pt-28 scheme-1">
-        <div className="container">
-          <div className="max-w-lg">
-          <p className="mb-3 font-semibold md:mb-4">Contact</p>
-          <h1 className="mb-5 text-h1 font-bold md:mb-6">Book a free consultation</h1>
-          <p className="text-medium">
+    <section className="bg-mist pt-24 pb-16 md:pb-24">
+      <Container className="mt-12 md:mt-16">
+        <Reveal className="max-w-[680px]">
+          <Eyebrow>Contact</Eyebrow>
+          <h1 className="text-hero pb-2 text-4xl md:text-5xl">Book a free consultation</h1>
+          <p className="mt-6 text-lg text-ink-soft">
             Tell us where your systems are today and where you want them to be. We will come back with practical next
             steps, in plain English.
           </p>
-          </div>
-        </div>
-      </section>
-      <section id="form" className="px-[5%] py-12 md:py-18 lg:py-20 scheme-1">
-        <div className="container grid grid-cols-1 gap-12 lg:grid-cols-[0.6fr_1fr] lg:gap-20">
-          <div>
-            <ul className="grid gap-8">
+        </Reveal>
+
+        <div className="mt-12 grid gap-12 lg:grid-cols-[1fr_1.6fr] lg:gap-16">
+          <Reveal delay={100}>
+            <ul className="grid gap-6">
               {details.map(([icon, t, v, link]) => (
                 <li key={t} className="flex gap-4">
-                  <Icon name={icon} className="size-8 shrink-0 text-blumine" />
+                  <span className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-paper text-brand">
+                    <Icon name={icon} className="size-6" />
+                  </span>
                   <div>
-                    <p className="mb-1 font-semibold">{t}</p>
+                    <p className="text-sm font-semibold text-ink-muted">{t}</p>
                     {link ? (
-                      <a href={link} className="underline">
+                      <a href={link} className={cn("text-base font-semibold text-ink hover:text-brand", motion)}>
                         {v}
                       </a>
                     ) : (
-                      <p>{v}</p>
+                      <p className="text-base font-semibold text-ink">{v}</p>
                     )}
                   </div>
                 </li>
               ))}
             </ul>
-            <div className="mt-10 h-px w-full bg-scheme-border" />
-            <p className="mt-8 font-semibold">What happens next</p>
-            <ol className="mt-4 grid gap-3 text-regular">
-              <li>1. We reply within one business day to arrange a time.</li>
-              <li>2. A free consultation to understand your goals and current setup.</li>
-              <li>3. A clear written recommendation with scope, timing and cost.</li>
-            </ol>
-          </div>
-          <ContactForm />
+            <div className="mt-12 rounded-2xl border border-line bg-paper p-6">
+              <p className="font-semibold">What happens next</p>
+              <Spotlight as="ol" period={1.8} className="mt-4 space-y-4 text-base text-ink-soft">
+                {[
+                  "We reply within one business day to arrange a time.",
+                  "A free consultation to understand your goals and current setup.",
+                  "A clear written recommendation with scope, timing and cost.",
+                ].map((t, i) => (
+                  <li key={t} data-spot="" className="spot-step flex gap-4">
+                    <span className="spot-num flex size-6 shrink-0 items-center justify-center rounded-full bg-brand text-xs font-semibold text-white">
+                      {i + 1}
+                    </span>
+                    {t}
+                  </li>
+                ))}
+              </Spotlight>
+            </div>
+          </Reveal>
+          <Reveal delay={200}>
+            <ContactForm />
+          </Reveal>
         </div>
-      </section>
-    </>
+      </Container>
+    </section>
   );
 }

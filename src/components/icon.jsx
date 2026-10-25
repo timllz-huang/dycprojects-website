@@ -2,13 +2,19 @@ import React from "react";
 import icons from "@/lib/icons.generated.js";
 import { cn } from "@/lib/utils";
 
-/** Material Symbols (rounded, weight 500), inlined at build time so they inherit text colour. */
-export function Icon({ name, className }) {
-  const d = icons[name];
-  if (!d) throw new Error(`Unknown icon: ${name} (run the build to regenerate icons)`);
+/** Phosphor icons (regular weight), inlined at build time so they inherit text colour. */
+export function Icon({ name, className, label }) {
+  const body = icons[name];
+  if (!body) throw new Error(`Unknown icon: ${name}`);
   return (
-    <svg viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true" className={cn("size-12", className)}>
-      <path d={d} />
-    </svg>
+    <svg
+      viewBox="0 0 256 256"
+      fill="currentColor"
+      role={label ? "img" : undefined}
+      aria-label={label}
+      aria-hidden={label ? undefined : true}
+      className={cn("size-6 shrink-0", className)}
+      dangerouslySetInnerHTML={{ __html: body }}
+    />
   );
 }
