@@ -11,7 +11,32 @@ export function Proof() {
     ...(p.certifications || []).map((c) => ["certificate", c]),
   ].filter(Boolean);
   const orgs = p.organisations || [];
-  if (!items.length && !orgs.length) return null;
+  // Until real credentials are supplied, show commitments the business has confirmed.
+  if (!items.length && !orgs.length) {
+    const commitments = [
+      ["chat-circle-dots", "Free first consultation"],
+      ["file-text", "Written scope and cost before work starts"],
+      ["clock-clockwise", "Regular updates at every stage"],
+    ];
+    return (
+      <section aria-label="Our commitments" className="-mt-8 bg-paper pb-16 md:-mt-12 md:pb-24">
+        <Container>
+          <Reveal className="rounded-2xl border border-line p-6 md:p-8">
+            <ul className="grid gap-4 md:grid-cols-3 md:gap-6">
+              {commitments.map(([icon, t], i) => (
+                <li key={t} data-kid="left" style={{ "--d": `${200 + i * 80}ms` }} className="flex items-center gap-3 text-base font-semibold">
+                  <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-brand-soft text-brand">
+                    <Icon name={icon} className="size-5" />
+                  </span>
+                  {t}
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+        </Container>
+      </section>
+    );
+  }
   return (
     <section aria-label="Credentials" className="bg-paper pb-16 md:pb-24">
       <Container>
